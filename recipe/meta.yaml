@@ -1,5 +1,5 @@
 {% set name = "click-rich-help" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/click-rich-help-{{ version }}.tar.gz
-  sha256: 74cb4655796aba826b11bb0c02d7bc9c2bb425a062075ee63622ba0f7d099d51
+  sha256: cb49da548265905f9888a47c55224878cd643bad0451b3a3b1758664f03f61c0
 
 build:
   number: 0
