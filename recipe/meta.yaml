@@ -7,23 +7,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/click-rich-help-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/click-rich-help-{{ version }}.tar.gz
   sha256: ca2b9463ec9950e4726f3aa4b037cde5d2c2d25838ae5a79d08f845760cb4792
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6,<4.0
+    - python {{ python_min }}
     - poetry
   run:
     - click >=8.0,<9.0
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
     - rich >=10.0
 
 test:
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/daylinmorgan/click-rich-help
